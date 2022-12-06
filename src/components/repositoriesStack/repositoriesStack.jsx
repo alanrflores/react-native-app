@@ -1,6 +1,7 @@
-import React from "react";
-import { View } from "react-native";
+import React, { useContext } from "react";
+import { Text, View } from "react-native";
 import StyleText from "../styleText/StyleText";
+import { ThemeContext } from "../themeContext/ThemeContext";
 
 const parseThousands = value => {
     return value >= 1000 
@@ -9,23 +10,24 @@ const parseThousands = value => {
 }
 
 const RepositoriesStack = (props) => {
+    const theme = useContext(ThemeContext);
     return (
         <View style={{ flexDirection:'row', justifyContent: 'space-around' , paddingTop: 10 }}>
         <View>
-         <StyleText align='center' fontWeight='bold'>{parseThousands(props.forksCount)}</StyleText>
-         <StyleText align='center'>Forks</StyleText>
+         <Text style={{ alignItems: 'center', fontWeight: 'bold', color: theme.color}}>{parseThousands(props.forksCount)}</Text>
+         <Text style={{color: theme.color}} align='center'>Forks</Text>
         </View>
         <View>
-         <StyleText align='center' fontWeight='bold'>{parseThousands(props.stargazersCoutn)}</StyleText>
-         <StyleText align='center'>Star</StyleText>  
+         <Text style={{ alignItems: 'center', fontWeight: 'bold', color: theme.color}}>{parseThousands(props.stargazersCount)}</Text>
+         <Text style={{color: theme.color}} align='center'>Star</Text>  
          </View>
          <View>
-         <StyleText align='center' fontWeight='bold'>{props.ratingAverage}</StyleText>
-         <StyleText align='center'>Rating</StyleText>
+         <Text style={{ alignItems: 'center', fontWeight: 'bold', color: theme.color}}>{props.ratingAverage}</Text>
+         <Text style={{color: theme.color}} align='center'>Rating</Text>
          </View>
          <View>
-         <StyleText align='center' fontWeight='bold'>{props.reviewCount}</StyleText>
-         <StyleText align='center'>Reviews</StyleText>
+         <Text style={{ alignItems: 'center', fontWeight: 'bold', color: theme.color}}>{props.reviewCount}</Text>
+         <Text style={{color: theme.color}} align='center'>Reviews</Text>
          </View>
         </View>
     )

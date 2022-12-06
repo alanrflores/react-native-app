@@ -17,10 +17,11 @@ const styles = StyleSheet.create({
 
 
 const StyledTextInput = ({ style={}, error, ...props}) => {
-     const inputStyles = {
-        ...styles.textInput,
-        ...styles,
-     }
+     const inputStyles = [
+        styles.textInput,
+        styles,
+        error && styles.error
+     ]
      return <TextInput style={inputStyles} {...props} />
 
 }

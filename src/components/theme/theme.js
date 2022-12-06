@@ -25,6 +25,20 @@ const theme = {
     fontWeights: {
         normal: '400',
         bold: '700'
+    },
+    light: {
+       theme: "light",
+       color: "black",
+       background: "white",
+    },
+    dark: {
+        theme: "dark",
+        color: "white",
+        background: "black",
+        borderWidth:1,
+        borderStyle: 'dashed',
+        borderColor:'white',
+        borderTopColor:'white'
     }
 } 
 

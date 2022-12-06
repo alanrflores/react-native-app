@@ -59,7 +59,7 @@ const Main = ({ navigation }) => {
     }
   };
 
-  const LogoutUser = ({navigation}) => {
+  const LogoutUser = ({ navigation }) => {
     const theme = useContext(ThemeContext);
     return (
       <View style={[styles.container, { backgroundColor: theme.background }]}>
@@ -113,10 +113,10 @@ const Main = ({ navigation }) => {
               </>
             ) : (
               <>
-              <Drawer.Screen 
-                 name="Landing"
-                 component={Landing}
-                 navigation={navigation}
+                <Drawer.Screen
+                  name="Landing"
+                  component={Landing}
+                  navigation={navigation}
                 />
                 <Drawer.Screen
                   color="#ffff"
